@@ -1,1 +1,51 @@
-<p>citas works!</p>
+ <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Citas</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2"><a class="" href="Nueva.html">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-circle"></i> Nuevo</button></a>
+              <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-file-export"></i> Exportar</button>
+            </div>
+     
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Hora</th>
+                <th>Fecha</th>
+                <th>Doctor</th>
+                <th colspan=3>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col">{{Cita.Cliente.Nombre}}</td>
+                <td>{{Cita.Cliente.Apellido}}</td>
+                <td>{{ Cita.Fecha | date:'shortTime' }}</td>
+                <td>{{ Cita.Fecha | date:'shortDate' }}</td>
+                <td>{{ Cita.Doctor.Nombre}}</td>
+                <td>
+                <form (ngSubmit)="onSubmit()" #form="ngForm">
+                <button type="submit" class="btn btn-primary"><fa-icon [icon]="faCheck"></fa-icon></button>
+                </form>
+               </td>
+                <td>
+                <form (ngSubmit)="onSubmit()" #form="ngForm">
+                 <button type="submit" class="btn btn-success"><fa-icon [icon]="faPen"></fa-icon></button>
+                </form>
+                </td>
+                <td>
+                <form (ngSubmit)="onSubmit()" #form="ngForm">
+                 <button type="submit" class="btn btn-danger"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+                </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>

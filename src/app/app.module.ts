@@ -17,6 +17,10 @@ import { UsuarioDatosComponent } from './components/usuario-datos/usuario-datos.
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 
+import { FormsModule } from '@angular/forms';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +40,9 @@ import { ReportesComponent } from './components/reportes/reportes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
